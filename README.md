@@ -104,17 +104,17 @@ We will start by filling out config.json
  ## config.json
 **token** - Discord Authentication Token from [https://discordapp.com/developers/applications/](https://discordapp.com/developers/applications/)
 1. You will need to go to the link above, which (when logged in) will take you to the developer section of Discord. 
-2. Here you will need to click on the "Create an application button". You will need to fill out the name of your bot.
+2. Here you will need to click on the "Create an application button". You will need to fill out the name of your bot.  
 ![https://i.imgur.com/mYnqd69.png](https://i.imgur.com/mYnqd69.png)
 
-3. Once that is completed you will want to click on the "Bot" tab on the left side menu. From there you will need to click on the "Add Bot" button to turn the newly created application into a bot.
+3. Once that is completed you will want to click on the "Bot" tab on the left side menu. From there you will need to click on the "Add Bot" button to turn the newly created application into a bot.  
 ![https://i.imgur.com/k3ya1kQ.png](https://i.imgur.com/k3ya1kQ.png)
 
-4. From there the "Click to Reveal Token" text will be displayed. Once you click that it will give you a text string. This will be pasted into the first property of the config.json.
+4. From there the "Click to Reveal Token" text will be displayed. Once you click that it will give you a text string. This will be pasted into the first property of the config.json.  
 ![https://i.imgur.com/12RIZuV.png](https://i.imgur.com/12RIZuV.png)
 
 **features - wordpress**
-* This property indicates whether you will be wanting to connect Verifier to your [WordPress](#wordpress) site. If so, make sure "Yes" is typed into the field, otherwise leave it at no.
+* This property indicates whether you will be wanting to connect Verifier to your [WordPress](#wordpress) site. If so, make sure "Yes" is typed into the field, otherwise leave it at no.  
 If you would like to connect to WordPress, please see the [WordPress](#wordpress) section of the documentation.
 
 **features - connection**
@@ -279,13 +279,13 @@ you will need to follow the steps below to enable developer mode so you can get 
  <a name="enabledev"></a>
  ##  Enable developer mode 
 Several settings in the configurations require you to enable developer mode in order to be able to get the values you need to enter. To enable developer mode, please follow the steps below.
-1. In the bottom left area of Discord, to the right of your names display will be a cog wheel, click this.
+1. In the bottom left area of Discord, to the right of your names display will be a cog wheel, click this.  
 ![https://i.imgur.com/XEhE277.png](https://i.imgur.com/XEhE277.png)
 
-2. In the left side menu locate and click the "Appearance" tab. 
+2. In the left side menu locate and click the "Appearance" tab.   
 ![https://i.imgur.com/7G2lwFF.png](https://i.imgur.com/7G2lwFF.png)
 
-4. Scroll down to the "Advanced" section and toggle "Developer Mode" to on.
+4. Scroll down to the "Advanced" section and toggle "Developer Mode" to on.  
 ![https://i.imgur.com/ID0xk2E.png](https://i.imgur.com/ID0xk2E.png)
 
  <a name="obtainid"></a>
@@ -293,7 +293,7 @@ Several settings in the configurations require you to enable developer mode in o
 1. Once developer mode is enabled (see above) you will be able to obtain the Id numbers for your roles. To accomplish this you will be to make sure the settings of "Allow anyone to @mention this role" is turned on (only long enough to obtain the Id, then it can be turned off).
 2. Once the @everyone mention is turned on go into a chat channel and type the @ symbol, this will display a list of roles and users that can be @mentioned.
 3. Find the role in which you need to obtain it's Id and select it. This will then have the roles name along with an @ in front of it in the chat's send box. Before you hit enter you will need to play a "\" before the @ symbol so that if, for example, your roles name is "asset1" the text in the chat box looks like this: ` \@asset1 `
-4. You can then hit enter and it will send the text to the channel and then display the roles ID as seen below. You can then copy and paste this role Id into the appropriate field in the config file.  The ID number is the numeric values only, disregard the `@` and `&` symbols. 
+4. You can then hit enter and it will send the text to the channel and then display the roles ID as seen below. You can then copy and paste this role Id into the appropriate field in the config file.  The ID number is the numeric values only, disregard the `@` and `&` symbols.  
 
 ![https://i.imgur.com/Paye23m.png](https://i.imgur.com/Paye23m.png)
 
@@ -437,7 +437,7 @@ The "Role name (ID)" is what you will need to put into Verifiers wordpress.json 
 7. **(Important)** Under the "Token Lifetimes (Global)" section set the value of "Access Token Lifetime" to a value very high. I have tested and recommend a value of around 599999999. 
 This value is the amount of time in seconds that the secured connection between Verifier and your WordPress site will be allowed. The value of 599999999 is 19 years. 
 You can adjust it as you wish but know that if the connection times out due to too short of a duration you will have to go through the Oauth2 authentication process again in order for 
-Verifier to communicate with your WordPress site again and functionality fill be lost between them until you do.
+Verifier to communicate with your WordPress site again and functionality fill be lost between them until you do.  
 ![https://i.imgur.com/YxrC6pb.png](https://i.imgur.com/YxrC6pb.png)
 
 
@@ -535,7 +535,7 @@ instead of replacing it with the new role. This means that if you have other plu
     }
 ```    
 
-4. After pasting the code into the "Enter the code for your snippet" box, select the "Run everywhere" option below that under "Where to execute the code?" section.
+4. After pasting the code into the "Enter the code for your snippet" box, select the "Run everywhere" option below that under "Where to execute the code?" section.  
 ![https://i.imgur.com/6OKpBcI.png](https://i.imgur.com/6OKpBcI.png)
 
 5. When completed, select the "Publish" button in the top right section of the page to activate the functionality.  
@@ -561,7 +561,7 @@ the prerequisite WordPress plugins you are ready to finalize the WordPress conne
 
 3. Once the connection has been approved you will be redirected to your sites main page but in the URL bar of your browser you will see at the end of your sites URL it will have the text `code=` as seen below:
 Copy and paste the code that comes after the `code=` (as seen highlighted below) back into the Discord private message with your Verifier bot and hit enter. This will complete the connection between Verifier and WordPress. 
-If you receive a reply back from Verifier stating "Connection successfully created." then everything worked as it should. 
+If you receive a reply back from Verifier stating "Connection successfully created." then everything worked as it should.  
 ![https://i.imgur.com/T3XmBFz.png](https://i.imgur.com/T3XmBFz.png)
 
     Note that there is a 30 second time limit from the time you click the link in Discord, approve the connection, and copy and paste the code back into Discord. If you do not make it in time and you get the message "Connection not established." you simply have to try again.
