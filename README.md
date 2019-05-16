@@ -609,3 +609,4 @@ wpsetup -       This begins the connection between Verifier and your wordpress s
 ```
 
 
+![alt text](https://i.imgur.com/cg5ow2M.png "instance.id")
