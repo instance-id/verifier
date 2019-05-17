@@ -1,12 +1,10 @@
 ## Important notes  
 
-### I will be adding actual releases as soon as I can. Just trying to get everything sorted. I figured a docker release might help with all the dependancies and what not.
+#### I will be adding actual releases as soon as I can make sure everything is working. Just trying to get everything sorted as It has been a few months since I have had time to revisit this. I made this about 5 months before I posted it as I didn't know what I wanted to do with it. I have included the code for the license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) as I considered selling licenses cheaply as a subscription for use but decided against it, in case anyone was interested in using it for anything. 
 
-### I made this about 5 months before I posted it as I didn't know what I wanted to do with it. I thought about selling licenses cheaply as a subscription for use but decided against it. I have included the code for the license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) in case anyone was interested in using it for anything. 
+#### This repo might be a little rough at first as I get things in order, so please bear with me.
 
-### This repo might be a little rough at first as I get things in order, so please bear with me.
-
-### I will try and turn the actual docs into a real wiki page on here. Until then, I have this one. http://verifier.instance.id
+#### I will try and turn the actual docs into a real wiki page on here. Until then, I have this one. http://verifier.instance.id
 ----
 # Welcome to the Verifier documentation page
 # Features
