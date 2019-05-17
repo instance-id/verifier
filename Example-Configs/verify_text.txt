@@ -1,0 +1,11 @@
+Hello!
+To verify your asset purchase(s) please reply directly  to this private message (do not post it in a public channel).
+Please use the follow list of valid asset codes as reference:
+
+            Example Asset 1 (asset1)
+            Example Asset 2 (asset2)
+
+Please type your reply below using the following format:
+ex. If you want to verify the Example Asset 2 asset (asset2) with an invoice number of 1234567890 type the following:
+            ``` !cmdvalidate asset2 123456789 ```
+(If verifying multiple assets, please do them one at a time)

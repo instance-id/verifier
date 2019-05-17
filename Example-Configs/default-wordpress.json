@@ -1,0 +1,31 @@
+{
+  // -------------- WordPress Connection  ----------------------------------------------------------------------------------
+  // See documentation for explanations and example config folder for example config setups: https://verifier.instance.id
+  oauth2:{
+      siteaddress: "https://example.com/",
+      client_id: "ReplaceMeWithClientID",
+      client_secret: "ReplaceMeWithClientSecretKey",
+      redirect: "https://example.com/?_wpoauth_callback=standards",
+      appname: "Verifier",
+
+      accessurl: "oauth/token",
+      authorizeurl: "oauth/authorize",
+      granttype: "authorization_code",
+  },
+
+  // -------------- WordPress Settings
+  applyrole: "No",
+  assets:{
+    shortcodename:"Asset1",
+  },
+
+  // -------------- Default text - Can be changed
+  text:{
+    connectlink: "Please use the following link to grant Verifier access to WordPress.",
+    enterid: "Enter ID from WordPress: ",
+    connsuccess:"Connection created successfully",
+    connfail: "Connection creation failed. Please try again."
+  },
+  // ------------- Do not change
+    siteconnection: "wordpress",
+}
