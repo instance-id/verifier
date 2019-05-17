@@ -1,6 +1,6 @@
 ## Important notes  
 
-#### I will be adding actual releases as soon as I can make sure everything is working. Just trying to get everything sorted as It has been a few months since I have had time to revisit this. I made this about 5 months before I posted it as I didn't know what I wanted to do with it. I have included the code for the license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) as I considered selling licenses cheaply as a subscription for use but decided against it, in case anyone was interested in using it for anything. 
+#### It looks like I need to make a few small updates to fix a few things. I had not touched this in a few months as I didn't know what I wanted to do with it. I will be adding actual releases as soon as I can make sure everything is working. Just trying to get everything sorted. I have included the code for subscription/license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) as I considered offering this as a cheap service but decided against it, in case anyone was interested in using it for anything. 
 
 #### This repo might be a little rough at first as I get things in order, so please bear with me.
 
