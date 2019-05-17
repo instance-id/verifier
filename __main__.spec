@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['__main__.py'],
-             pathex=['C:\\Users\\Home\\Documents\\Unity\\_Code\\Verifier\\Verifier'],
+             pathex=['C:\\Users\\Home\\Documents\\Verifier'],
              binaries=[],
              datas=[],
              hiddenimports=[],
