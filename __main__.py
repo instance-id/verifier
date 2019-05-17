@@ -1,3 +1,10 @@
+#---------------------------------------------#
+# Verifier - Discord/Unity Asset Verification #
+# Created by isntance.id - http://instance.id #
+# github.com/instance-id - system@instance.id #
+#---------------------------------------------#
+#                                             #
+
 # Enable this import to use subscription license verification
 # from instance.lz4 import start
 

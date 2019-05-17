@@ -1,7 +1,6 @@
 {
   // The below is fake example data to demonstrate what a proper setup would look like using your own data.
   // Default uses the internal database, this example is using MySQL as indicated in the "database" field
-
   // -------------- Database Settings ----------------------------------------------------------------------------------
   // Default is a built in light weight json based database, other options currently include MySQL and MongoDB
   // To change database provider simply enter your preference below as follows:
@@ -14,7 +13,6 @@
     password: "!password$",
     dbname: "mydatabasename",
     dbprefix: "", // If not using a table prefix, leave the quotation marks empty.
-
     // Chances are you will not need to modify the character set, but if you do, you can.
     // If you don't know what it is or you are in doubt, just leave it as is.
     charset: "utf8mb4"
