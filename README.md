@@ -1,6 +1,6 @@
 ## Important notes  
 
-### I will be adding an actual release as soon as I can. Just trying to get everything sorted. 
+### I will be adding actual releases as soon as I can. Just trying to get everything sorted. I figured a docker release might help with all the dependancies and what not.
 
 ### I made this about 5 months before I posted it as I didn't know what I wanted to do with it. I thought about selling licenses cheaply as a subscription for use but decided against it. I have included the code for the license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) in case anyone was interested in using it for anything. 
 
