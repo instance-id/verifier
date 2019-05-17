@@ -56,8 +56,8 @@ setup(
               'venv.Lib.site-packages.pip-10.0.1-py3.7.egg.pip._internal.operations', 'modules.actions',
               'modules.validate'],
     url='instance.id',
-    license='MyOwnOnly',
-    author='MostHated',
-    author_email='mosthated@instance.id',
-    description='Verifier : Unity', install_requires=['pymysql', 'pyodbc', 'pymssql', 'websockets']
+    license='MIT',
+    author='instance.id',
+    author_email='system@instance.id',
+    description='Verifier : Unity Asset Verification', install_requires=['pymysql', 'pyodbc', 'pymssql', 'websockets']
 )
