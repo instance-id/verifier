@@ -1,12 +1,12 @@
 ## Important notes  
 
-### I will be adding actual releases as soon as I can. Just trying to get everything sorted. I figured a docker release might help with all the dependancies and what not.
+#### If you don't use 3.6 things start to act weird for some reason with 3.7
 
-### I made this about 5 months before I posted it as I didn't know what I wanted to do with it. I thought about selling licenses cheaply as a subscription for use but decided against it. I have included the code for the license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) in case anyone was interested in using it for anything. 
+#### It looks like I need to make a few small updates to fix a few things. I had not touched this in a few months as I didn't know what I wanted to do with it. I will be adding actual releases as soon as I can make sure everything is working. Just trying to get everything sorted. I have included the code for subscription/license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) as I considered offering this as a cheap service but decided against it, in case anyone was interested in using it for anything. 
 
-### This repo might be a little rough at first as I get things in order, so please bear with me.
+#### This repo might be a little rough at first as I get things in order, so please bear with me.
 
-### I will try and turn the actual docs into a real wiki page on here. Until then, I have this one. http://verifier.instance.id
+#### I will try and turn the actual docs into a real wiki page on here. Until then, I have this one. http://verifier.instance.id
 ----
 # Welcome to the Verifier documentation page
 # Features
