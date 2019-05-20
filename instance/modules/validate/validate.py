@@ -1,6 +1,3 @@
-import sys
-import os
-from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 from instance.database import *
@@ -10,32 +7,6 @@ import jsoncfg
 from datetime import datetime
 from jsoncfg.value_mappers import require_string
 import requests
-import logging
-
-
-from pathlib import Path  # python3 only
-env_path = Path('.') / 'instance' / 'config' / '.env'
-load_dotenv(dotenv_path=env_path)
-
-LOG_LEVEL = os.getenv('LOG_LEVEL')
-CONSOLE_LOG_LEVEL = os.getenv('CONSOLE_LOG_LEVEL')
-
-logger = logging.getLogger('validate')
-logger.setLevel(LOG_LEVEL)
-
-stdout_logger = logging.StreamHandler(sys.stdout)
-stdout_logger.setFormatter(logging.Formatter(
-    '%(asctime)s [%(levelname)s] %(message)s'))
-stdout_logger.setLevel(CONSOLE_LOG_LEVEL)
-
-handler = logging.FileHandler(
-    filename='instance/logs/discord.log', encoding='utf-8', mode='w')
-handler.setFormatter(logging.Formatter(
-    '%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-
-logger.addHandler(stdout_logger)
-logger.addHandler(handler)
-
 
 text = jsoncfg.load_config('instance/config/text.json')
 config = jsoncfg.load_config('instance/config/config.json')
