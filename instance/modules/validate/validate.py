@@ -1,3 +1,6 @@
+import sys
+import os
+from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 from instance.database import *
@@ -7,6 +10,31 @@ import jsoncfg
 from datetime import datetime
 from jsoncfg.value_mappers import require_string
 import requests
+import logging
+
+
+from pathlib import Path  # python3 only
+env_path = Path('.') / 'instance' / 'config' / '.env'
+load_dotenv(dotenv_path=env_path)
+
+LOG_LEVEL = os.getenv('LOG_LEVEL')
+CONSOLE_LOG_LEVEL = os.getenv('CONSOLE_LOG_LEVEL')
+
+logger = logging.getLogger('validate')
+logger.setLevel(LOG_LEVEL)
+
+stdout_logger = logging.StreamHandler(sys.stdout)
+stdout_logger.setFormatter(logging.Formatter(
+    '%(asctime)s [%(levelname)s] %(message)s'))
+stdout_logger.setLevel(CONSOLE_LOG_LEVEL)
+
+handler = logging.FileHandler(
+    filename='instance/logs/discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter(
+    '%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+
+logger.addHandler(stdout_logger)
+logger.addHandler(handler)
 
 
 text = jsoncfg.load_config('instance/config/text.json')
@@ -41,7 +69,8 @@ def iterate(response, verification):
                     pass
 
         except Exception as e:
-            print(f'No invoice found, please ensure you used the correct shortcode for the product.')
+            print(
+                f'No invoice found, please ensure you used the correct shortcode for the product.')
             traceback.print_exc()
     else:
         return 'Invalid response from server.'
@@ -70,21 +99,24 @@ async def wp_email_check(self, ctx):
     # Ugly, but necessary for now to convert all text to lowercase so there is no discrepancy from input vs expected
     await ctx.send(text.email_capture_during_verification())
     email = await self.bot.wait_for('message', check=check)
-    tmp = wpsettings.applyrole()
-    apply = tmp.lower()
-    if apply == "yes":
-        email_check = await self.wordpress_email_verify(ctx, email.content)
-        data = jsoncfg.loads(email_check)
-        if data['id'] is not 'null' and data['email'] == email.content:
-            return email.content
-        else:
-            addy = config.miscsettings.webaddress()
-            await ctx.send('No account for email: ' + email.content + ' at ' +
-                           addy + '. Please ensure you have an account created, if not, '
-                                                              'create one and then verify your invoice again'
-                                                              ' using the email address used for account creation.')
-            email = ''
-            return email
+    wpa = config.features.wordpress()
+    word = wpa.lower()
+    if word == 'yes':
+        tmp = wpsettings.applyrole()
+        apply = tmp.lower()
+        if apply == "yes":
+            email_check = await self.wordpress_email_verify(ctx, email.content)
+            data = jsoncfg.loads(email_check)
+            if data['id'] is not 'null' and data['email'] == email.content:
+                return email.content
+            else:
+                addy = config.miscsettings.webaddress()
+                await ctx.send('No account for email: ' + email.content + ' at ' +
+                               addy + '. Please ensure you have an account created, if not, '
+                               'create one and then verify your invoice again'
+                               ' using the email address used for account creation.')
+                email = ''
+                return email
     else:
         email = email.content
         return email
@@ -92,6 +124,7 @@ async def wp_email_check(self, ctx):
 
 class Validate(commands.Cog):
     """instance.id Verification Module"""
+
     def __init__(self, bot):
         self.bot = bot
         self.wordpress = False
@@ -113,7 +146,8 @@ class Validate(commands.Cog):
         email = ''
         #  This gets the guild(server) id and 'Verified' roles from the config.json file
         role = ctx.bot.get_guild(guildId).get_role(verifyId)
-        discriminator = ctx.bot.get_guild(guildId).get_member(ctx.author.id).discriminator
+        discriminator = ctx.bot.get_guild(
+            guildId).get_member(ctx.author.id).discriminator
         user = ctx.bot.get_guild(guildId).get_member(ctx.author.id).name
         userid = user + '#' + discriminator
 
@@ -141,7 +175,8 @@ class Validate(commands.Cog):
         verification = determine_asset(pkg)
         #  Takes the user input of asset package and invoice number and sends it to the asset store verification api
         payload = {'key': {apikey}, 'invoice': {invoice}}
-        r = requests.get('https://api.assetstore.unity3d.com/publisher/v1/invoice/verify.json', params=payload)
+        r = requests.get(
+            'https://api.assetstore.unity3d.com/publisher/v1/invoice/verify.json', params=payload)
         response = r.json()
         if len(response['invoices']) <= 0:
             await ctx.send(text.no_invoice_found())
@@ -179,8 +214,8 @@ class Validate(commands.Cog):
                             else:
                                 await ctx.send('Unable to automatically apply account changes for: ' + email + ' at ' +
                                                config.miscsettings.webaddress() + '. Please ensure you have an account created, if not, '
-                                                                     'create one and then verify your invoice again'
-                                                                     ' using the email address used for account creation.')
+                                               'create one and then verify your invoice again'
+                                               ' using the email address used for account creation.')
                                 return
                         else:
                             await ctx.send(wpreply)
@@ -197,15 +232,16 @@ class Validate(commands.Cog):
                     await ctx.send('Invoice verification has not completed. Please try again. If the issue '
                                    'persists, please contact a member for support.')
                     return
-                roleId = ctx.bot.get_guild(guildId).get_role(config.roles[pkg]())
+                roleId = ctx.bot.get_guild(
+                    guildId).get_role(config.roles[pkg]())
                 await self.bot.get_guild(guildId).get_member(ctx.author.id).add_roles(role, roleId)
                 await ctx.send('Response: ' + presponse + ' ' + 'Verified')
 
-    @validate.error
-    async def validate_on_error(self, ctx, error):
-        return await ctx.send('Both product shortcode as well as an invoice number '
-                              'are needed to verify an invoice. Please type !cmdverify'
-                              ' to see validation help information')
+    # @validate.error
+    # async def validate_on_error(self, ctx, error):
+    #     return await ctx.send('Both product shortcode as well as an invoice number '
+    #                           'are needed to verify an invoice. Please type !cmdverify'
+    #                           ' to see validation help information')
 
     #  ------------------------ Database maintenance commands -------------------------------
     @commands.command()
@@ -218,12 +254,12 @@ class Validate(commands.Cog):
             await ctx.author.send(result)
         else:
             embed = discord.Embed(title=f'Invoice viewer :     ', description=f'```md\n\nUser details                          \n'
-                                                                          f'Name    | {name}\n'
-                                                                          f'package | {inv["package"]}\n'
-                                                                          f'Invoice | {inv["invoice"]}\n'
-                                                                          f'Purchase| {inv["purdate"]}\n'
-                                                                          f'Verified| {inv["verifydate"]}\n'
-                                                                          f'\n*----------------------*```', color=colorlight)
+                                  f'Name    | {name}\n'
+                                  f'package | {inv["package"]}\n'
+                                  f'Invoice | {inv["invoice"]}\n'
+                                  f'Purchase| {inv["purdate"]}\n'
+                                  f'Verified| {inv["verifydate"]}\n'
+                                  f'\n*----------------------*```', color=colorlight)
             await ctx.author.send('', embed=embed)
 
     @commands.command()
@@ -238,11 +274,11 @@ class Validate(commands.Cog):
                 for package in results:
                     for pack in package['packages']:
                         embed = discord.Embed(title=f'Invoice viewer :     ', description=f'```md\n\nUser details                          \n'
-                                                                                           f'Name    | {package["username"]}\n'
-                                                                                           f'package | {pack["package"]}\n'
-                                                                                           f'Invoice | {pack["invoice"]}\n'
-                                                                                           f'Purchase| {pack["purdate"]}\n'
-                                                                                           f'Verified| {pack["verifydate"]}\n'
+                                              f'Name    | {package["username"]}\n'
+                                              f'package | {pack["package"]}\n'
+                                              f'Invoice | {pack["invoice"]}\n'
+                                              f'Purchase| {pack["purdate"]}\n'
+                                              f'Verified| {pack["verifydate"]}\n'
                                                                                           f'\n*----------------------*```', color=colorlight)
                         await ctx.author.send('', embed=embed)
             except Exception as e:
@@ -257,9 +293,9 @@ class Validate(commands.Cog):
         inv = message
         # await ctx.author.send('Are you sure you want to delete ' + inv + ' ? Reply yes/no.')
         embed = discord.Embed(title=f'Invoice Management : Delete', description=f'```md\n\nAre you sure you would like to Delete {inv}?\n'
-                                                                                              f'[1] | Delete Invoice\n'
-                                                                                              f'[2] | Cancel Deleting\n'
-                                                                                              f'[3] | Exit this menu\n\n*This Menu will timeout in 30s*```', color=colorlight)
+                              f'[1] | Delete Invoice\n'
+                              f'[2] | Cancel Deleting\n'
+                              f'[3] | Exit this menu\n\n*This Menu will timeout in 30s*```', color=colorlight)
         mainmsg = await ctx.message.channel.send('', embed=embed)
         confirm = await self.bot.wait_for('message', timeout=15, check=check)
 
@@ -296,11 +332,11 @@ class Validate(commands.Cog):
             await ctx.author.send('WordPress module is not enabled.')
             return 'WordPress module is not enabled.'
 
-
     # Wordpress email lookup
+
     async def wordpress_email_verify(self, ctx, email):
         if self.wordpress:
-            wptype ='get'
+            wptype = 'get'
             query = 'wp-json/instance/v1/email/%s'
             r = self.wp.query(wptype, query, email)
             return r
@@ -313,7 +349,7 @@ class Validate(commands.Cog):
     # Test to check email
     async def wordpress_email(self, ctx, email):
         if self.wordpress:
-            wptype ='get'
+            wptype = 'get'
             query = 'wp-json/instance/v1/email/%s'
             r = self.wp.query(wptype, query, email)
             this = jsoncfg.loads(r)

@@ -1,6 +1,14 @@
 #System
 .directory
 
+#Config Files
+dbconfig.json
+config.json
+license.json
+wordpress.json
+.env
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

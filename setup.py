@@ -10,5 +10,6 @@ setup(
     author='instance.id',
     author_email='system@instance.id',
     description='Verifier : Unity',
-    install_requires=['pymysql', 'pyodbc', 'pymssql', 'websockets', 'discord', 'requests']
+    install_requires=['pymysql', 'pyodbc', 'pymssql',
+                      'websockets', 'discord', 'requests']
 )
