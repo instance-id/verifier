@@ -1,5 +1,15 @@
 ## Important notes  
 
+#### Current version works - minus the WordPress integration. I believe something changed with one of the required plugins. I have not had a chance to test it yet. For now, in the config, for "wordpress" enter "no" as seen below.
+
+
+```json
+  features:{
+    wordpress:"No",
+    connection: "Oauth2"
+  },
+```
+
 #### It looks like I need to make a few small updates to fix a few things. I had not touched this in a few months as I didn't know what I wanted to do with it. I will be adding actual releases as soon as I can make sure everything is working. Just trying to get everything sorted. I have included the code for subscription/license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) as I considered offering this as a cheap service but decided against it, in case anyone was interested in using it for anything.
 
 #### This repo might be a little rough at first as I get things in order, so please bear with me
