@@ -5,7 +5,7 @@
 
 ```json
   features:{
-    wordpress:"No",
+    wordpress: "No",
     connection: "Oauth2"
   },
 ```
