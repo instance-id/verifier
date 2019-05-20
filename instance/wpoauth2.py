@@ -22,7 +22,7 @@ log.addHandler(stream)
 # </editor-fold>
 
 db = TinyDB('instance/db/sessions.json', default_table='site_sessions')
-config = jsoncfg.load_config('config/wordpress.json')
+config = jsoncfg.load_config('instance/config/wordpress.json')
 
 
 class Oauth2:

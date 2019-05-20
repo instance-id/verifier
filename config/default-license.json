@@ -1,6 +1,0 @@
-{
-  // -------------- instance.id account information --------------------------------------------------------------------
-  // Here you will paste your license key and emaill address associated with your https://instance.id account
-  licensekey: "YourLicenseKey",
-  emailaddress: "Account@email.com"
-}

@@ -1,0 +1,40 @@
+{
+  // The below is fake example data to demonstrate what a proper setup would look like using your own data.
+  // -------------- WordPress Connection  ----------------------------------------------------------------------------------
+  // These settings allow you to connect Verifier to your WordPress site in order to give your users access to protected pages or download sections you may have.
+  // Please note that an active account and email address from the user is required in order for Verifier to locate the user and apply the permissions.
+  oauth2: {
+    // Make sure the site address has a trailing '/' at the end.
+      siteaddress: "https://instance.id/",
+      client_id: "ZraP4f34f34f34fhhffsdfgSDFh6NrVRGer6",
+      client_secret: "ASFASDF23f42FFf2e2efeff2fFffFFFrgrg",
+      redirect: "https://instance.id/?_wpoauth_callback=standards",
+    // Change this to whatever you named the application you created within the WP-Oauth plugin in order to create the above keys.
+      appname: "Verifier",
+    // The below addresses should stay the default unless you manually change them within the WP-Oauth plugin.
+    // Make sure these addresses (if changed) do *not* have a leading or trailing '/' at the beginning or end.
+      accessurl: "oauth/token",
+      authorizeurl: "oauth/authorize",
+      granttype: "authorization_code",
+  },
+  // -------------- WordPress Settings
+  // Works in conjunction with the main configs "require email". If set to "Yes" it will confirm that the user has an
+  // account on your WordPress site before moving forward so that permission changes can occur automatically.
+  applyrole: "Yes",
+  // These assets will be named the same as your asset shortcodes along with the name of the role in WordPress you would like the user to be changed to
+  // when they complete the verification.
+  assets: {
+    //(shortcode: "WordPressRole"
+    MGA1: "MGA1",
+    MGA2: "MGA2",
+  },
+  //Text for different things within the WordPress module
+  text: {
+    connectlink: "Please use the following link to grant Verifier access to WordPress.",
+    enterid: "Enter ID from WordPress: ",
+    connsuccess: "Connection created successfully",
+    connfail: "Connection creation failed. Please try again."
+  },
+  // Do not change. For internal identification -----------------
+    siteconnection: "wordpress",
+}

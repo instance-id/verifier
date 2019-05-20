@@ -1,10 +1,3 @@
-#---------------------------------------------#
-# Verifier - Discord/Unity Asset Verification #
-# Created by isntance.id - http://instance.id #
-# github.com/instance-id - system@instance.id #
-#---------------------------------------------#
-#                                             # 
-
 from tinydb import TinyDB, where
 from datetime import datetime
 import traceback

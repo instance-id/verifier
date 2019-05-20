@@ -1,8 +1,0 @@
-{
-    // The below is fake example data to demonstrate what a proper setup would look like using your own data.
-
-  // -------------- instance.id account information --------------------------------------------------------------------
-  // Here you will paste your license key and emaill address associated with your https://instance.id account
-  licensekey: "defgwef3-fff23-23423-234f-234ffg2",
-  emailaddress: "me@myemail.com"
-}

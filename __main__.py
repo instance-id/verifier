@@ -1,32 +1,23 @@
-#---------------------------------------------#
-# Verifier - Discord/Unity Asset Verification #
-# Created by isntance.id - http://instance.id #
-# github.com/instance-id - system@instance.id #
-#---------------------------------------------#
-#                                             #
-
 # Enable this import to use subscription license verification
 # from instance.lz4 import start
 
+import sys
 from instance.instanceid import InstanceId
 
 # from log_test.log_test import logmain
 import logging
 
-# <editor-fold desc="Logging definitions">
-from colorlog import ColoredFormatter
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
 
-log = logging.getLogger(__name__)
-LOG_LEVEL = logging.INFO
-LOGFORMAT = "  %(log_color)s%(levelname)-8s%(reset)s | %(log_color)s%(message)s%(reset)s"
-logging.root.setLevel(LOG_LEVEL)
-formatter = ColoredFormatter(LOGFORMAT)
-stream = logging.StreamHandler()
-stream.setLevel(LOG_LEVEL)
-stream.setFormatter(formatter)
-log.setLevel(LOG_LEVEL)
-log.addHandler(stream)
-# </editor-fold>
+stdout_logger = logging.StreamHandler(sys.stdout)
+stdout_logger.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s'))
+
+handler = logging.FileHandler(filename='instance/logs/discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+
+logger.addHandler(stdout_logger)
+logger.addHandler(handler)
 
 
 def main():

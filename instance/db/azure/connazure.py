@@ -1,10 +1,3 @@
-#---------------------------------------------#
-# Verifier - Discord/Unity Asset Verification #
-# Created by isntance.id - http://instance.id #
-# github.com/instance-id - system@instance.id #
-#---------------------------------------------#
-#                                             # 
-
 import pyodbc
 import jsoncfg
 from datetime import datetime
@@ -26,7 +19,7 @@ log.setLevel(LOG_LEVEL)
 log.addHandler(stream)
 # </editor-fold>
 
-config = jsoncfg.load_config('config/dbconfig.json')
+config = jsoncfg.load_config('instance/config/dbconfig.json')
 # config = jsoncfg.load_config('../../../config/dbconfig.json')
 
 dbdata = config.dbdata()

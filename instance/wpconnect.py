@@ -1,10 +1,3 @@
-#---------------------------------------------#
-# Verifier - Discord/Unity Asset Verification #
-# Created by isntance.id - http://instance.id #
-# github.com/instance-id - system@instance.id #
-#---------------------------------------------#
-#                                             #
-
 from tinydb import TinyDB, where
 from datetime import datetime
 from instance.wpoauth2 import Oauth2
@@ -34,7 +27,7 @@ log.addHandler(stream)
 # config = jsoncfg.load_config('../config/wordpress.json')
 
 db = TinyDB('instance/db/sessions.json', default_table='site_sessions')
-config = jsoncfg.load_config('config/wordpress.json')
+config = jsoncfg.load_config('instance/config/wordpress.json')
 
 
 class WPConnect:

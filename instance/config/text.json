@@ -1,0 +1,13 @@
+{
+  // --------- Default text for the different functions and menus that are displayed to end users-----------------------
+    // --------- Verification process text
+    invoice_in_use: "Invoice number already in use. Please contact support",
+    email_capture_during_verification: "Please enter your email address.",
+    no_invoice_found: "No invoice found, please ensure you used the correct shortcode for the product and did not miss any numbers.",
+    legacy_assets: "Verification not necessary for legacy assets. Please visit http://legacy.opsive.com for support.",
+    invoice_not_valid: "Invoice is valid but unable to complete validation process. Please contact support.",
+
+  // --------- Text from input commands
+    // Search Invoice
+    search_no_invoice: "No invoice was found."
+}

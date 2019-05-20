@@ -1,10 +1,3 @@
-# ------------------------------------------- #
-# Verifier - Discord/Unity Asset Verification #
-# Created by isntance.id - http://instance.id #
-# github.com/instance-id - system@instance.id #
-# ------------------------------------------- #
-#                                             #
-
 import discord
 from discord.ext import commands
 from datetime import datetime, timedelta
@@ -18,7 +11,7 @@ log = logging.getLogger(__name__)
 
 
 # These are some general loading / unloading and maintenance actions. Maybe more if I don't plan properly
-class Actions:
+class Actions(commands.Cog):
     """instance.id Actions Module"""
 
     def __init__(self, bot):

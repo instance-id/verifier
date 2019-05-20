@@ -1,0 +1,33 @@
+{
+  // -------------- Discord Assistant Configuration --------------------------------------------------------------------
+  // See documentation for explanations and example config folder for example config setups: https://verifier.instance.id
+  token: "ReplaceMeWithTokenID",
+  features:{
+    wordpress:"No",
+    connection: "Oauth2"
+  },
+  miscsettings:{
+    webaddress:"https://example.com",
+    requireemail: "No",
+  },
+  commandprefix: "!cmd",
+  discordIds:{
+    guild: 100000000000000000,
+    botusers: 100000000000000000
+  },
+  roles:{
+    Verified: 100000000000000000,
+    shortcodename: 100000000000000000,
+  },
+  datecompare: "false",
+  comparedate: "2018-01-01",
+  compareasset1: "",  // Original asset
+  compareasset2: "",  // Newer asset
+
+    apiKey:{
+      shortcodename: "ReplaceMeWithAPIKey",
+  },
+    package:{
+      shortcodename: "Replace Me With Asset Name From Store",
+  }
+}
