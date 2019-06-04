@@ -85,17 +85,15 @@ The order of operation to get Verifier up and running is as follows:
 
 **5. Once config.json and dbconfig.json are filled out it depends on if you are going to be using the WordPress integration whether that needs to be filled out or not. If so, please see the [WordPress](#wordpress) section. Otherwise you can move on.**
 
-**6. Next is to input your license key into the file called "license.json". You will need to enter the key into the quotes of `licensekey: "LicenseNumberHere"` and also your username and email address from http://instance.id.**
+**6. The next step will be starting up Verifier. Depending on if you are running on Linux or Windows. it will either be a binary file called "Verifier" or "Verifier.exe" respectively.**
 
-**7. The next step will be starting up Verifier. Depending on if you are running on Linux or Windows. it will either be a binary file called "Verifier" or "Verifier.exe" respectively.**
+**7. Once Verifier has started up you will be greeted with a link in the console window. Clicking this link will bring up your browser and take you to a Discord page which has you select your server so that it is allowed to join.**
 
-**8. Once Verifier has started up you will be greeted with a link in the console window. Clicking this link will bring up your browser and take you to a Discord page which has you select your server so that it is allowed to join.**
+**8. At this point you should have Verifier up and running in your server under the name in which you gave it when creating the bot application through the Discord developer portal.**
 
-**9. At this point you should have Verifier up and running in your server under the name in which you gave it when creating the bot application through the Discord developer portal.**
+**9. The next step is to setup the database. Begin a private message directly with the bot. If you left the `commandprefix` field default you will type in `!cmddbsetup`. This will automatically create the tables Verifier requires either in the internal database or using one of the other options if you set them up.**
 
-**10. The next step is to setup the database. Being a private message directly with the bot. If you left the `commandprefix` field default you will type in `!cmddbsetup`. This will automatically create the tables Verifier requires either in the internal database or using one of the other options if you set them up.**
-
-**11. If you are integrating WordPress you will need to now connect Verifier to WordPress by following [these final steps](#finalsteps). Otherwise, you should be good to go!**
+**10. If you are integrating WordPress you will need to now connect Verifier to WordPress by following [these final steps](#finalsteps). Otherwise, you should be good to go!**
 
 Please reference the command list at the end of this document.
 
