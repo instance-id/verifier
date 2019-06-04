@@ -85,8 +85,8 @@ The order of operation to get Verifier up and running is as follows:
 
 **5. Once config.json and dbconfig.json are filled out it depends on if you are going to be using the WordPress integration whether that needs to be filled out or not. If so, please see the [WordPress](#wordpress) section. Otherwise you can move on.**
 
-**6. The next step will be starting up Verifier. Depending on if you are running on Linux or Windows. it will either be a binary file called "Verifier" or "Verifier.exe" respectively.**  
-**6.EDIT (I originally intended on this being a compiled application, which it could be still as I have included the setup file and .spec files to compile with pyinstaller, but it is suffecient to simply run ```python3 __main__.py``` from the root directors (must be python 3.7))
+respectively6. The next step will be starting up Verifier. Depending on if you are running on Linux or Windows. it will either be a binary file called "Verifier" or "Verifier.exe" respectively.**  
+**6. EDIT (I originally intended on this being a compiled application, which it could be still as I have included the setup file and .spec files to compile with pyinstaller, but it is suffecient to simply run ```python3 __main__.py``` from the root directors (must be python 3.7))**
 
 **7. Once Verifier has started up you will be greeted with a link in the console window. Clicking this link will bring up your browser and take you to a Discord page which has you select your server so that it is allowed to join.**
 
