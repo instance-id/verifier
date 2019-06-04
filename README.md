@@ -599,7 +599,7 @@ ex. `!cmdverify`
 verify -        The first step in the validation process (suggested that this is the only command you advertise to users)
                 Calling 'verify' prompts the bot to PM the user with instructions on how to proceed 
 
-validate -      (For security purposes, this command should only be used in a private message with the Discord Assistant bot.)
+validate -      (For security purposes, this command should only be used in a private message with the Verifier bot.)
                 This is the call that actually performs the validation process, it takes in 2 arguments. 
                 The first is the shortcode(link) for the asset being verified. The second is the invoice number.
                                 ex. !cmdvalidate asset1 1234567890
