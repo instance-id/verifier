@@ -11,11 +11,7 @@
   },
 ```
 
-#### It looks like I need to make a few small updates to fix a few things. I had not touched this in a few months as I didn't know what I wanted to do with it. I will be adding actual releases as soon as I can make sure everything is working. Just trying to get everything sorted. I have included the code for subscription/license checking (uses a WooCommerce subscription plugin to generate and manage the subscriptions) as I considered offering this as a cheap service but decided against it, in case anyone was interested in using it for anything.
-
-#### This repo might be a little rough at first as I get things in order, so please bear with me
-
-#### I will try and turn the actual docs into a real wiki page on here. Until then, I have this one. <http://verifier.instance.id>
+#### I will try and turn the actual docs into a real wiki page on here. 
 ----
 # Welcome to the Verifier documentation page
 # Features
