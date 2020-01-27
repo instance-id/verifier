@@ -45,7 +45,7 @@ pbr==3.0.0
 pefile==2018.8.8
 psycopg2==2.7.5
 pycparser==2.19
-PyInstaller==3.4
+PyInstaller==3.6
 pymssql==2.1.4
 PyMySQL==0.9.2
 pyodbc==4.0.24
