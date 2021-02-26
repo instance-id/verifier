@@ -1,4 +1,4 @@
-aiohttp==3.5.4
+aiohttp==3.7.4
 altgraph==0.16.1
 aniso8601==3.0.2
 argon2-cffi==18.3.0
