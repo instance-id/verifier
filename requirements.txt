@@ -30,7 +30,7 @@ idna==2.7
 imgurpython==1.1.7
 ipython==7.5.0
 itsdangerous==0.24
-Jinja2==2.10.1
+Jinja2==2.11.3
 json-cfg==0.4.2
 kwonly-args==1.0.10
 lxml==4.2.5
