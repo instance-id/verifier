@@ -11,7 +11,7 @@ cffi==1.11.5
 chardet==3.0.4
 Click==7.0
 colorlog==4.0.2
-cryptography==3.2
+cryptography==3.3.2
 dill==0.2.9
 discord==1.0.1
 discord.py==1.1.1
