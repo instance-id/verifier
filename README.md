@@ -47,19 +47,10 @@ Once an invoice number is verified and claimed it is then tied to the users acco
 # Prerequisites
    Requirements: Depending on your host operating system as well as what features you plan to use while determine what additional items are requires.
 
-   If using MS SQL Server (Azure SQL) - You will need the SQL Server ODBC Driver installed on the machine Verifier will be running.
+   If using MS SQL Server (Azure SQL) - You will need the SQL Server ODBC Driver installed on the machine Verifier will be running. Otherwise, you can just use the included local database, or MySQL.
 
 [Download MS SQL ODBC Driver 17](https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-2017)
-
-If using WordPress - You will need the following plugins.
-
-* [WP Oauth Server](https://wordpress.org/plugins/oauth2-provider/) - Used to create and maintain the Oauth2 secure connection between Verifier and your WordPress site.
-* [User Role Editor](https://wordpress.org/plugins/user-role-editor/) - Used to easily create additional user permission roles in WordPress to allow much finer control of what the role has access to.
-* [PHP Code Snippets](https://wordpress.org/plugins/insert-php/) - (Not 100% required, you can manually change code if you prefer) This allows you to run the small bit of PHP required to retrieve back the users email address (REST API cannot directly access a few pieces of user meta data). It allows you to just copy and paste the code into your admin panel. Alternatively you can paste the code into your themes functions.php file.
-
-(Optional, but very useful as it will allow you make individual posts, pages, etc secured and only accessible to specific roles, users, etc. So if you would like to have sections of your site only accessible by verified users, either in general or specific to individual assets, this lets you do that.)
-
-* [Advanced Access Manager](https://wordpress.org/plugins/advanced-access-manager/) - If you find you are unable to communicate with your WordPress site once everything is configured, you may need this to make sure the REST API is enabled.
+ 
 # Installation Steps
 The order of operation to get Verifier up and running is as follows:
  
