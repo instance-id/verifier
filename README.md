@@ -1,15 +1,7 @@
 ## Important notes  
 
 #### If anyone ends up using this, do shoot me a message and let me know how it's working for you! I would love to hear.
-#### Current version works - minus the WordPress integration. I believe something changed with one of the required plugins. I have not had a chance to test it yet. For now, in the config, for "wordpress" enter "no" as seen below.
-
-
-```json
-  features:{
-    wordpress: "No",
-    connection: "Oauth2"
-  },
-```
+#### Current version works - minus the WordPress integration. I believe something changed with one of the required plugins. I have not had a chance to test it yet. For now, in the config, for "wordpress" enter "no".
 
 #### I will try and turn the actual docs into a real wiki page on here. 
 ----
