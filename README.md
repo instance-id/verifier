@@ -77,7 +77,7 @@ The order of operation to get Verifier up and running is as follows:
 
 **9. The next step is to setup the database. Begin a private message directly with the bot. If you left the `commandprefix` field default you will type in `!cmddbsetup`. This will automatically create the tables Verifier requires either in the internal database or using one of the other options if you set them up.**
 
-**10. If you are integrating WordPress you will need to now connect Verifier to WordPress by following [these final steps](#finalsteps). Otherwise, you should be good to go!**
+**10 You should be good to go after that. : )
 
 Please reference the command list at the end of this document.
 
