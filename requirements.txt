@@ -33,7 +33,7 @@ itsdangerous==0.24
 Jinja2==2.11.3
 json-cfg==0.4.2
 kwonly-args==1.0.10
-lxml==4.6.3
+lxml==4.9.1
 macholib==1.11
 MarkupSafe==1.0
 multidict==4.4.2
