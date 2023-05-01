@@ -17,7 +17,7 @@ discord==1.0.1
 discord.py==1.1.1
 dominate==2.3.4
 falcon==1.2.0
-Flask==1.0.2
+Flask==2.3.2
 Flask-Bootstrap==3.3.7.1
 Flask-Login==0.4.1
 Flask-OAuthlib==0.9.5
